@@ -9,7 +9,7 @@ const RightNav = () => {
     return (
         <div>
             <h4>Login With</h4>
-            <Button variant="outline-primary" className='my-1 '><FaGoogle /> Login with Google</Button>
+            <Button variant="outline-primary" className='my-1 mx-1'><FaGoogle /> Login with Google</Button>
             <Button variant="outline-secondary" className='my-1 mx-1'><FaGithub /> Login with Github</Button>
             <div>
                 <h4>Find us on</h4>
