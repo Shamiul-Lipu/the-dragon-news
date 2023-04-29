@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../pages/Shared/Header';
-import Footer from '../pages/Shared/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
-import RightNav from '../pages/Shared/RightNav/RightNav';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import { Outlet } from 'react-router-dom';
+import RightNav from '../pages/Shared/RightNav/RightNav';
+import Footer from '../pages/Shared/Footer';
 
-const Main = () => {
+const NewsLayout = () => {
     return (
         <div>
             <Header />
@@ -30,4 +30,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default NewsLayout;
