@@ -3,6 +3,8 @@ import React from 'react';
 import { Card, Image } from 'react-bootstrap';
 import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 
 const NewsCard = ({ news }) => {
@@ -30,7 +32,8 @@ const NewsCard = ({ news }) => {
             </Card.Body>
             <Card.Footer className="text-muted d-flex">
                 <div className='flex-grow-1 d-flex align-items-center'>
-
+                    <Rating style={{ maxWidth: 100 }} value={Math.round(rating?.number) || 0} readOnly ></Rating>
+                    <span>{rating?.number}</span>
                 </div>
                 <div>
                     <FaEye></FaEye> {total_view}
