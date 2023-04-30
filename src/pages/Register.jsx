@@ -6,6 +6,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
+    const [accepted, setAccepted] = useState(false)
     const { createUser, auth } = useContext(AuthContext);
 
     const handleCreateUser = (event) => {
@@ -28,6 +29,10 @@ const Register = () => {
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    const handleTerms = e => {
+        setAccepted(e.target.checked)
     }
 
     return (
@@ -54,12 +59,12 @@ const Register = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check
-
+                        onClick={handleTerms}
                         type="checkbox"
                         name="accept"
                         label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button disabled={!accepted} variant="primary" type="submit">
                     Register
                 </Button>
                 <br />
